@@ -20,6 +20,7 @@ if defined?(RSpec)
   require 'chefspec/matchers/env'
   require 'chefspec/matchers/include_recipe'
   require 'chefspec/matchers/script'
+  require 'chefspec/matchers/node_attribute'
 
   require 'chefspec/helpers/describe'
   RSpec.configure do |c|

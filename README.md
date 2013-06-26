@@ -550,6 +550,23 @@ Assert that a ruby block would not be executed:
 expect(chef_run).not_to execute_ruby_block 'ruby_block_name'
 ```
 
+### Node attributes
+
+Assert that a node attribute is set:
+```ruby
+expect(chef_run).to set_node['foo']['bar']
+```
+
+Assert that a node attribute is set to a specific value:
+```ruby
+expect(chef_run).to set_node['foo']['bar'].to 'baz'
+```
+
+Assert that a node attribute is not set to a specific value:
+```ruby
+expect(chef_run).not_to set_node['foo']['bar'].to 42
+```
+
 Varying the Cookbook Path
 -------------------------
 By default ChefSpec will infer the `cookbook_path` from the location of the spec. However if you want to use a different path you can pass it in as an argument to the `ChefRunner` constructor like so:
